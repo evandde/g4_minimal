@@ -24,20 +24,20 @@ void EventAction::EndOfEventAction(const G4Event *anEvent)
     if (!HCE)
         return;
 
-    // if (fHCID == -1)
-    //     fHCID = G4SDManager::GetSDMpointer()->GetCollectionID("Detector/EDep");
+    if (fHCID == -1)
+        fHCID = G4SDManager::GetSDMpointer()->GetCollectionID("Detector/EDep");
 
-    // auto analysisManager = G4AnalysisManager::Instance();
+    auto analysisManager = G4AnalysisManager::Instance();
 
-    // auto hitsMap = static_cast<G4THitsMap<G4double> *>(HCE->GetHC(fHCID));
-    // for (const auto &iter : *(hitsMap->GetMap()))
-    // {
-    //     auto eDep = *(iter.second);
-    //     if (eDep > 0.)
-    //     {
-    //         analysisManager->FillH1(0, eDep);
-    //         analysisManager->FillNtupleDColumn(0, eDep);
-    //         analysisManager->AddNtupleRow();
-    //     }
-    // }
+    auto hitsMap = static_cast<G4THitsMap<G4double> *>(HCE->GetHC(fHCID));
+    for (const auto &iter : *(hitsMap->GetMap()))
+    {
+        auto eDep = *(iter.second);
+        if (eDep > 0.)
+        {
+            analysisManager->FillH1(0, eDep);
+            analysisManager->FillNtupleDColumn(0, eDep);
+            analysisManager->AddNtupleRow();
+        }
+    }
 }

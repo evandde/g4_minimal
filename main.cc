@@ -36,7 +36,7 @@ int main(int argc, char **argv)
     G4Random::setTheSeed(time(nullptr));
 
     // Construct the default run manager
-    auto runManager = G4RunManagerFactory::CreateRunManager();
+    auto runManager = G4RunManagerFactory::CreateRunManager(G4RunManagerType::Serial);
 
     // Set mandatory initialization classes
     runManager->SetUserInitialization(new DetectorConstruction);

@@ -38,17 +38,17 @@ $ ./g4_minimal run.mac
 
 ### DetectorConstruction
 - 공기(G4_AIR)로 채워진 1 m x 1 m x 1 m 규격의 박스형태 월드
-- 물(G4_WATER)로 채워진 5 cm x 5 cm x 5 cm 규격의 박스형태 물 지오메트리를 0, 0, 10 cm 위치에 배치 (주석처리됨)
-- 물 박스에서의 energy deposition을 기록할 수 있도록 primitive scorer 부여 (주석처리됨)
+- 물(G4_WATER)로 채워진 5 cm x 5 cm x 5 cm 규격의 박스형태 물 지오메트리를 0, 0, 10 cm 위치에 배치 (branch - example)
+- 물 박스에서의 energy deposition을 기록할 수 있도록 primitive scorer 부여 (branch - example)
 
 ### PrimaryGeneratorAction
-- 0.662 MeV의 감마선을 원점에서 isotropic하게 발생시킴 (주석처리됨)
+- 0.662 MeV의 감마선을 원점에서 isotropic하게 발생시킴 (branch - example)
 
 ### EventAction
-- 물 박스에 대해 기록된 energy deposition을 취합하여, 히스토그램과 N-tuple의 형태로 기록 (주석처리됨)
+- 물 박스에 대해 기록된 energy deposition을 취합하여, 히스토그램과 N-tuple의 형태로 기록 (branch - example)
 
 ### RunAction
-- 히스토그램과 N-tuple형태로 데이터를 기록하기 위한 설정을 수행 (주석처리됨)
+- 히스토그램과 N-tuple형태로 데이터를 기록하기 위한 설정을 수행 (branch - example)
 
 ---
 
