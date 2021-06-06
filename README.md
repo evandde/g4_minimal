@@ -19,13 +19,9 @@ $ cmake ..
 
 $ make
 
-(for graphical visualization with qt)
+$ ./g4_minimal     # (for graphical visualization with qt)
 
-$ ./g4_minimal
-
-(for running simulation with "run.mac" file)
-
-$ ./g4_minimal run.mac
+$ ./g4_minimal run.mac     # (for running simulation with "run.mac" file)
 
 ---
 
