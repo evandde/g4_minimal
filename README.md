@@ -12,14 +12,19 @@ Tested with Geant4 version 10.7.p01 at 2021.06.06.
 실행방법 (How to run)
 
 $ mkdir build
+
 $ cd build
+
 $ cmake ..
+
 $ make
 
 (for graphical visualization with qt)
+
 $ ./g4_minimal
 
 (for running simulation with "run.mac" file)
+
 $ ./g4_minimal run.mac
 
 ---
