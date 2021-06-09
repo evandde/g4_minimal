@@ -13,7 +13,6 @@ public:
     virtual void EndOfEventAction(const G4Event *) override;
 
 private:
-    G4int fHCID;
 };
 
 #endif // EVENTACTION_HH

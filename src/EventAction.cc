@@ -3,7 +3,7 @@
 #include "EventAction.hh"
 
 EventAction::EventAction()
-    : G4UserEventAction(), fHCID(-1)
+    : G4UserEventAction()
 {
 }
 
