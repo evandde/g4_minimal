@@ -2,6 +2,7 @@
 #include "G4SDManager.hh"
 #include "G4THitsMap.hh"
 #include "G4SystemOfUnits.hh"
+#include "g4csv.hh"
 
 #include "EventAction.hh"
 
@@ -29,12 +30,17 @@ void EventAction::EndOfEventAction(const G4Event *anEvent)
 
     auto hitsMap = static_cast<G4THitsMap<G4double> *>(HCE->GetHC(fHCID));
 
+    auto analysisManager = G4AnalysisManager::Instance();
+
     for (const auto &iter : *(hitsMap->GetMap()))
     {
         auto eDep = *(iter.second);
         if (eDep > 0.)
         {
-            G4cout << "--- Energy Deposit:" << eDep / MeV << G4endl;
+            analysisManager->FillH1(0, eDep / MeV);
+
+            analysisManager->FillNtupleDColumn(0, eDep / MeV);
+            analysisManager->AddNtupleRow();
         }
     }
 }
