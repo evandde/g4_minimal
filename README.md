@@ -24,12 +24,9 @@ This repository contains step-by-step codes for running Geant4 simulation, organ
 
 각 브랜치는 특정 Geant4 버전에 대응됩니다.
 
-  * **`main`**: 가장 최신 Geant4 버전을 지원하는 강의 자료입니다.
+  * **`main`**: 가장 최신의 강의 자료입니다.
   * **`G410`**: Geant4 10.x 버전을 지원하는 강의 자료입니다.
-
-현재 `G410` 브랜치의 코드는 2021년 6월 6일에 **Geant4 10.7.p01** 버전에서 최종적으로 테스트되었습니다.
-
-(This code in `G410` branch was tested with Geant4 version 10.7.p01 at 2021.06.06.)
+    * 현재 `G410` 브랜치의 코드는 2021년 6월 6일에 **Geant4 10.7.p01** 버전에서 최종적으로 테스트되었습니다. (This code in `G410` branch was tested with Geant4 version 10.7.p01 at 2021.06.06.)
 
 -----
 
