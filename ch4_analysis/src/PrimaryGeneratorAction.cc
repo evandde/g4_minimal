@@ -1,9 +1,9 @@
+#include "PrimaryGeneratorAction.hh"
+
 #include "G4ParticleGun.hh"
 #include "G4SystemOfUnits.hh"
 #include "G4RandomTools.hh"
 #include "G4Gamma.hh"
-
-#include "PrimaryGeneratorAction.hh"
 
 PrimaryGeneratorAction::PrimaryGeneratorAction()
     : G4VUserPrimaryGeneratorAction()

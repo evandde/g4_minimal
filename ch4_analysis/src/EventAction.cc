@@ -1,10 +1,9 @@
-#include "G4Event.hh"
+#include "EventAction.hh"
+
 #include "G4SDManager.hh"
 #include "G4THitsMap.hh"
 #include "G4SystemOfUnits.hh"
-#include "g4csv.hh"
-
-#include "EventAction.hh"
+#include "G4GenericAnalysisManager.hh"
 
 EventAction::EventAction()
     : G4UserEventAction(), fHCID(-1)
@@ -26,20 +25,22 @@ void EventAction::EndOfEventAction(const G4Event *anEvent)
         return;
 
     if (fHCID == -1)
-        fHCID = G4SDManager::GetSDMpointer()->GetCollectionID("Detector/EDep");
+        fHCID = G4SDManager::GetSDMpointer()->GetCollectionID("PhantomSD/Edep");
 
     auto hitsMap = static_cast<G4THitsMap<G4double> *>(HCE->GetHC(fHCID));
 
-    auto analysisManager = G4AnalysisManager::Instance();
+    auto analysisManager = G4GenericAnalysisManager::Instance();
 
     for (const auto &iter : *(hitsMap->GetMap()))
     {
+        auto copyNo = iter.first;
         auto eDep = *(iter.second);
         if (eDep > 0.)
         {
-            analysisManager->FillH1(0, eDep / MeV);
+            analysisManager->FillH1(0, eDep / keV);
 
-            analysisManager->FillNtupleDColumn(0, eDep / MeV);
+            analysisManager->FillNtupleDColumn(0, copyNo);
+            analysisManager->FillNtupleDColumn(1, eDep / keV);
             analysisManager->AddNtupleRow();
         }
     }
