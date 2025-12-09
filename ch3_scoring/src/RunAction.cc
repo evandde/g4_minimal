@@ -1,6 +1,6 @@
-#include "G4RunManager.hh"
-
 #include "RunAction.hh"
+
+#include "G4RunManager.hh"
 
 RunAction::RunAction()
     : G4UserRunAction()
