@@ -9,9 +9,9 @@ class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
 {
 public:
     PrimaryGeneratorAction();
-    virtual ~PrimaryGeneratorAction() override;
+    ~PrimaryGeneratorAction() override;
 
-    virtual void GeneratePrimaries(G4Event *) override;
+    void GeneratePrimaries(G4Event *) override;
 
 private:
     G4ParticleGun *fPrimary;

@@ -1,5 +1,3 @@
-#include "G4Event.hh"
-
 #include "EventAction.hh"
 
 EventAction::EventAction()
