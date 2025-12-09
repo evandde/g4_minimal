@@ -3,15 +3,6 @@
 #include "RunAction.hh"
 #include "EventAction.hh"
 
-ActionInitialization::ActionInitialization()
-    : G4VUserActionInitialization()
-{
-}
-
-ActionInitialization::~ActionInitialization()
-{
-}
-
 void ActionInitialization::BuildForMaster() const
 {
     SetUserAction(new RunAction);

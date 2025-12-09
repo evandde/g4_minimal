@@ -3,24 +3,23 @@
 // * License and Disclaimer                                           *
 // *                                                                  *
 // * This product includes software developed by Members of the       *
-// * Geant4 Collaboration ( http://cern.ch/geant4 ).                  *
+// * Geant4 Collaboration ( https://geant4.web.cern.ch ).             *
 // *                                                                  *
 // * This product is a template code for Geant4 provided by Y. Kim.   *
 // * Author: Young-su Kim (Evan Kim)                                  *
 // * E-mail: evandde@gmail.com                                        *
-// * homepage: https://evandde.github.io/                             *
-// * Tested with Geant4 version 10.7.p01 at 2021.06.06.               *
+// * homepage: https://evanote.mew.kr/                                *
+// * Tested with Geant4 version 11.4.0 at 2025.12.07.               *
 // *                                                                  *
 // ********************************************************************
 //
-
-#include "G4RunManagerFactory.hh"
-#include "G4UImanager.hh"
 
 #include "DetectorConstruction.hh"
 #include "QBBC.hh"
 #include "ActionInitialization.hh"
 
+#include "G4RunManagerFactory.hh"
+#include "G4UImanager.hh"
 #include "G4VisExecutive.hh"
 #include "G4UIExecutive.hh"
 
@@ -33,9 +32,9 @@ int main(int argc, char **argv)
         ui = new G4UIExecutive(argc, argv);
 
     // Set random seed number
-    G4Random::setTheSeed(time(nullptr));
+    // G4Random::setTheSeed(static_cast<long>(time(nullptr)));
 
-    // Construct the default run manager
+    // Construct run manager
     auto runManager = G4RunManagerFactory::CreateRunManager(G4RunManagerType::Serial);
 
     // Set mandatory initialization classes
