@@ -2,6 +2,7 @@
 #define EVENTACTION_HH
 
 #include "G4UserEventAction.hh"
+#include "G4Event.hh"
 
 class EventAction : public G4UserEventAction
 {
@@ -9,8 +10,8 @@ public:
     EventAction();
     ~EventAction() override;
 
-    virtual void BeginOfEventAction(const G4Event *) override;
-    virtual void EndOfEventAction(const G4Event *) override;
+    void BeginOfEventAction(const G4Event *) override;
+    void EndOfEventAction(const G4Event *) override;
 
 private:
 };

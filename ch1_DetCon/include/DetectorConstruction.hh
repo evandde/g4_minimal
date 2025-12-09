@@ -9,11 +9,11 @@ class G4LogicalVolume;
 class DetectorConstruction : public G4VUserDetectorConstruction
 {
 public:
-    DetectorConstruction();
-    virtual ~DetectorConstruction() override;
+    DetectorConstruction() = default;
+    ~DetectorConstruction() override = default;
 
-    virtual G4VPhysicalVolume *Construct() override;
-    virtual void ConstructSDandField() override;
+    G4VPhysicalVolume *Construct() override;
+    void ConstructSDandField() override;
 };
 
 #endif

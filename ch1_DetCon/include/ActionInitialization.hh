@@ -6,11 +6,11 @@
 class ActionInitialization : public G4VUserActionInitialization
 {
 public:
-    ActionInitialization();
-    virtual ~ActionInitialization() override;
+    ActionInitialization() = default;
+    ~ActionInitialization() override = default;
 
-    virtual void BuildForMaster() const override;
-    virtual void Build() const override;
+    void BuildForMaster() const override;
+    void Build() const override;
 };
 
 #endif
